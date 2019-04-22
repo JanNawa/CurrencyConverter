@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.*?>
+<?import java.net.URL?>
+
+<GridPane id="gridPane" prefHeight="300" prefWidth="400" alignment="center" hgap="15" vgap="15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab4.nawaphan.FXMLMainController">
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3" fx:id="head">
+        Currency Converter
+    </Label>
+    <ChoiceBox GridPane.columnIndex="0" GridPane.rowIndex="1" value="CAD" fx:id="leftChoicebox">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="CAD" />
+                <String fx:value="USD" />
+                <String fx:value="YEN" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <Button GridPane.columnIndex="1" GridPane.rowIndex="1" 
+                text="Swap" onAction="#handleSwapping" fx:id="swapButton" />
+    <ChoiceBox GridPane.columnIndex="2" GridPane.rowIndex="1" value="USD" fx:id="rightChoicebox">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="CAD" />
+                <String fx:value="USD" />
+                <String fx:value="YEN" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <TextField GridPane.columnIndex="0" GridPane.rowIndex="2"
+               minHeight="16" minWidth="20" fx:id="userInput" />
+    <Button GridPane.columnIndex="1" GridPane.rowIndex="2" 
+                text="Reset" onAction="#handleReset" fx:id="resetButton" />
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="2"
+               minHeight="16" minWidth="69" fx:id="label" />
+    <Button GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="3" GridPane.rowSpan="2"  
+                text="Convert" onAction="#handleConversion" fx:id="convertButton" />
+</GridPane>
